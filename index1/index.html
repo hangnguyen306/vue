@@ -1,0 +1,25 @@
+<html>
+    <head><link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        
+        <div id="app">
+            {{ message }}
+            {{ title}}
+            <span v-if="seen"> now see me</span>
+            <input v-model ="title">
+            <ol>
+                <li v-for='todo in todos'>{{ todo.text }}</li>
+            </ol>
+
+            <button v-on:click='revertMesg'>button</button>
+            <ul>
+                <todo-item v-for ="item in todos" v-bind:namepro="item"  v-bind:key="item.id"></todo-item>
+            </ul>
+        </div>
+        
+        <script src="index.js"></script>
+    </body>
+</html>
